@@ -1,0 +1,9 @@
+{
+	"name" : "Christian Påbøl",
+	"title": "Awesome homepage belonging to %name",
+	"sites":	[
+		{"title" : "Google", "url" : "http://www.google.com/"}
+	],
+	"configUpdate" : 1
+
+}
