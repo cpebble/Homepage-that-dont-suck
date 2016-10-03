@@ -1,0 +1,16 @@
+{
+  "uploadOnSave": true,
+  "useAtomicWrites": false,
+  "deleteLocal": false,
+  "hostname": "localhost",
+  "port": "22",
+  "target": "/home/cpj/public_html/dash",
+  "ignore": [
+    ".remote-sync.json",
+    ".git/**"
+  ],
+  "username": "cpj",
+  "password": "qazmoke",
+  "watch": [],
+  "transport": "scp"
+}
