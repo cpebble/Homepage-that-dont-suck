@@ -1,9 +1,13 @@
+body{
+    background-image: url("back.png");
+    background-repeat: repeat;
+}
 #sites{
   display: flex;
   width: 100%;
   max-width: 100vw;
   align-items: center;
-  align-content: space-around;
+  align-content: space-between;
   justify-content: space-around;
   padding-top: 5%;
   flex-flow: row wrap;;
@@ -15,6 +19,7 @@
   font-family: sans-serif;
   background: lightgrey;
   display: inline-block;
+  margin-bottom: 2em;
   padding: 4em;
   border-radius: 5px;
   font-size: 15px;
@@ -53,12 +58,11 @@
 }
 .site:hover{
   /*animation: siteHover 500ms 1 forwards */
-  animation: tada 2s;
+  animation: tada 1s;
 
 }
 .site:hover:before{
     transform: scale(1);
-    animation: tada 2s;
 }
 @keyframes siteHover {
     0% {
@@ -74,7 +78,7 @@
 
 #title{
     margin: 2em 0 0em 4em;
-    animation: shake 2s infinite alternate;
+    animation: shake 2s;
 }
 
 @keyframes shake {
@@ -116,6 +120,26 @@
     transform: scale3d(1, 1, 1);
   }
 }
-#sites::after{
-    background-image: url('giphy.gif');
+
+.box{
+    display: inline-block;
+    padding: 0 0 0 0;
+    margin: 5em;
+    min-width: 20rem;
+    font-family: sans-serif;
+}
+.boxHead{
+    font-weight: bold;
+    padding: 0.5em 1em 0.5em 2em;
+    background-color: #a8a8a8;
+    border-radius: 5px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+.boxBody{
+    background-color: #cccccc;
+    border-radius: 5px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    padding: 1em 3em 1em 1em;
 }
