@@ -76,7 +76,9 @@ body{
     }
 }
 
-
+.fortune{
+    margin: 1em 0 1em 7em;
+}
 #title{
     margin: 2em 0 0em 4em;
     animation: shake 2s;
