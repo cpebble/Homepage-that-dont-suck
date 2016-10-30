@@ -13,6 +13,7 @@ body{
   flex-flow: row wrap;;
 }
 .site{
+    flex-shrink: 1;
   text-align: center;
   text-decoration: none;
   color: black;
@@ -120,7 +121,12 @@ body{
     transform: scale3d(1, 1, 1);
   }
 }
-
+#boxes{
+    display: flex;
+    align-content: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 .box{
     display: inline-block;
     padding: 0 0 0 0;
@@ -137,9 +143,12 @@ body{
     border-bottom-right-radius: 0px;
 }
 .boxBody{
-    background-color: #cccccc;
+    background-color: rgba(204,204,204,0.7);
     border-radius: 5px;
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
     padding: 1em 3em 1em 1em;
+}
+.boxBody > p{
+    margin: 0;
 }

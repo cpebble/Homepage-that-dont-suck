@@ -10,7 +10,7 @@ var config ={ //This is the site configuration
 			{"title" : "xkcd",			"url" : "http://www.xkcd.com/"}
 		],
 		"configUpdate" : 1
-		}
+	};
 
 //First we set the header with variables
 var heading = config.title;
@@ -19,7 +19,7 @@ console.log(heading);
 document.getElementById("title").innerHTML = heading;
 
 var sitesDiv = $("#sites");
-var linkString = "<a href='%href' id='%title' class='site'>%title</a>"
+var linkString = "<a href='%href' id='%title' class='site'>%title</a>";
 config.sites.forEach( site => {
 	var html = linkString.replace(/%title/g, site.title)
 		.replace(/%href/g, site.url);
