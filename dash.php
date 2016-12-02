@@ -5,7 +5,7 @@
 	<link rel="stylesheet" href="dank.css">
 </head>
 <body>
-<H1 id="title"></H1>
+<h1 id="title"></H1>
 <h2 class="fortune"><?php system("fortune -a /home/cpj/.oh-my-zsh/plugins/chucknorris/fortunes") ?></h2>
 
 <div id="sites">
