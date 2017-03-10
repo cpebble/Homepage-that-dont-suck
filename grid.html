@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>CSS grid luxury</title>
+</head>
+<body>
+    <style>
+        .t1Cont{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            background-color: gray;
+            justify-items: stretch;
+            align-items: stretch;
+            grid-row-gap: 2em;
+            grid-column-gap: 1em;
+        }
+        .t1it{
+            background-color: blue;
+        }
+    </style>
+    <h1> Test1</h1>
+    <div class="t1Cont" style="width:20vw; height:20vh;">
+        <div id="t1it1" class="t1it"></div>
+        <div id="t1it2" class="t1it"></div>
+        <div id="t1it3" class="t1it"></div>
+        <div id="t1it4" class="t1it"></div>
+        <div id="t1it5" class="t1it"></div>
+        <div id="t1it6" class="t1it"></div>
+    </div>
+    <style>
+        .t2Cont{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-template-areas:
+            "left mid right"
+            "bleft bmid bright";
+            background-color: gray;
+            justify-items: stretch;
+            align-items: stretch;
+            grid-row-gap: 2em;
+            grid-column-gap: 1em;
+        }
+        .t2it{
+            background-color: blue;
+        }
+        #t2top-mid{
+            background-color: red;
+            grid-area: mid;
+        }
+    </style>
+    <h1> Test2</h1>
+    <div class="t2Cont" style="width:20vw; height:20vh;">
+        <div id="t2it1" class="t2it"></div>
+        <div id="t2it2" class="t2it"></div>
+        <div id="t2it3" class="t2it"></div>
+        <div id="t2it4" class="t2it"></div>
+        <div id="t2it5" class="t2it"></div>
+        <div id="t2top-mid" class="t2it"></div>
+    </div>
+    <style>
+        .t3Cont{
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-template-areas:
+            "left mid right"
+            "bleft bmid bright";
+            background-color: gray;
+            justify-items: stretch;
+            align-items: stretch;
+            grid-row-gap: 2em;
+            grid-column-gap: 1em;
+        }
+        .t3it{
+            background-color: blue;
+        }
+        #t3top-mid{
+            background-color: red;
+            grid-row: mid / bmid;
+            grid-column: mid;
+        }
+    </style>
+    <h1> Test3</h1>
+    <div class="t3Cont" style="width:20vw; height:20vh;">
+        <div id="t3it1" class="t3it"></div>
+        <div id="t3it3" class="t3it"></div>
+        <div id="t3it3" class="t3it"></div>
+        <div id="t3it4" class="t3it"></div>
+        <div id="t3top-mid" class="t3it"></div>
+    </div>
+    <style>
+        .sites{
+            display: grid;
+            grid: repeat(3, 1fr) / repeat(4, 1fr );
+            grid-auto-flow: row;
+            justify-items: stretch;
+            align-items: stretch;
+            grid-gap: 1em 1em;           
+
+        }
+        .site{
+            background-color: gray;
+            width: 100%;
+            height: 100%;
+            display:grid;
+            grid: 1fr/1fr;
+            justify-items: center;
+            align-items: center;
+            border-radius: 1em;
+        }
+        .site a {
+        }
+    </style>
+    <h1>Sider</h1>
+    <div class="sites" style="width: 40vw; height:30vh">
+        <div id="site1" class="site"><a>Google</a></div>
+        <div id="site2" class="site"><a>Facebook</a></div>
+        <div id="site3" class="site"><a>Reddit</a></div>
+        <div id="site4" class="site"><a>XKCD</a></div>
+        <div id="site5" class="site"><a>Youtube</a></div>
+    </div>
+</body>
+</html>

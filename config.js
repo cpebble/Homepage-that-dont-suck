@@ -7,7 +7,8 @@ var config ={ //This is the site configuration
 			{"title" : "Facebook",		"url" : "http://www.facebook.com/"},
 			{"title" : "Lectio", 		"url" : "https://www.lectio.dk/lectio/681/forside.aspx"},
 			{"title" : "Commitstrip",	"url" : "http://www.commitstrip.com/"},
-			{"title" : "xkcd",			"url" : "http://www.xkcd.com/"}
+			{"title" : "xkcd",			"url" : "http://www.xkcd.com/"},
+			{"title" : "gridTest", 		"url" : "grid.html"}
 		],
 		"configUpdate" : 1
 	};
