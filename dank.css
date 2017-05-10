@@ -34,7 +34,16 @@ body{
 }
 .site:hover{
     background-color: cyan;
+}
+.site::after{
     box-shadow: 0px 0px 0px 7px cyan;
+    opacity: 0;
+    transition: opacity 0.1s ease-in;
+    width: 100%;
+    height: 100%;
+}
+.site:hover::after{
+    opacity: 1;
 }
 /*#sites{
   display: flex;
@@ -209,6 +218,114 @@ body{
 .alert > .boxHead{
     background-color: rgb(239, 69, 69);
 }
+
+#loadingBox{height: 80%; display: flex; justify-content: center; align-items: center; padding: 0;}
+
+#loading {
+    /*height: 4.5em;
+    width:  4.5em;*/
+    display: grid;
+    grid: repeat(2, 2em) / repeat(3, 2em);
+    justify-items: stretch;
+    align-items:   stretch;
+
+}
+.loadBox{
+    /*animation: loadColor 2s linear 0s infinite;*/
+}
+#load1{
+    background-color: gray;
+    animation: loadAnim 2s linear 0s infinite;
+    border-radius: 10px;
+}
+#load2{
+    background-color: darkgray;
+    animation: load2Anim 2s linear -0.5s infinite;
+    border-radius: 10px;
+    grid-row: 2/3;
+    grid-column: 3/4;
+}
+
+
+@keyframes loadAnim {
+    0%{
+        grid-row: 1/2;
+        grid-column: 1/2;
+    }
+    12%{
+        grid-row: 1/2;
+        grid-column: 1/3;
+        background-color: gray;
+    }
+
+    25%{
+        background-color: #959595;
+        grid-row: 1/2;
+        grid-column: 2/3;
+    }
+    37%{
+        grid-row: 1/3;
+        grid-column: 2/3;
+    }
+    50%{
+        grid-row: 2/3;
+        grid-column: 2/3;
+        background-color: #959595;
+    }
+    63%{
+        background-color: gray;
+        grid-row: 2/3;
+        grid-column: 1/3;
+    }
+    75%{
+        grid-row: 2/3;
+        grid-column: 1/2;
+    }
+    88%{
+        grid-row: 1/3;
+        grid-column: 1/2;
+    }
+}
+@keyframes load2Anim {
+    0%{
+        grid-row: 2/3;
+        grid-column: 3/4;
+    }
+    12%{
+        grid-row: 1/3;
+        grid-column: 3/4;
+    }
+    25%{
+        grid-row: 1/2;
+        grid-column: 3/4;
+    }
+    37%{
+        grid-row: 1/2;
+        grid-column: 2/4;
+        background-color: darkgray;
+    }
+    50%{
+        background-color: #959595;
+        grid-row: 1/2;
+        grid-column: 2/3;
+    }
+    63%{
+        grid-row: 1/3;
+        grid-column: 2/3;
+    }
+    75%{
+        grid-row: 2/3;
+        grid-column: 2/3;
+        background-color: #959595;
+    }
+    88%{
+        background-color: darkgray;
+        grid-row: 2/3;
+        grid-column: 2/4;
+    }
+}
+
+
 
 @keyframes flash {
   from, 50%, to {

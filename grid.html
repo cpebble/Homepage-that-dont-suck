@@ -98,7 +98,7 @@
             grid-auto-flow: row;
             justify-items: stretch;
             align-items: stretch;
-            grid-gap: 1em 1em;           
+            grid-gap: 1em 1em;
 
         }
         .site{
@@ -121,6 +121,62 @@
         <div id="site3" class="site"><a>Reddit</a></div>
         <div id="site4" class="site"><a>XKCD</a></div>
         <div id="site5" class="site"><a>Youtube</a></div>
+    </div>
+    <style>
+        .animCont{
+            display: grid;
+            grid-template-columns: 0px 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-template-areas:
+            "left mid right"
+            "bleft bmid bright";
+            background-color: gray;
+            justify-items: stretch;
+            align-items: stretch;
+            grid-row-gap: 2em;
+            grid-column-gap: 1em;
+        }
+        .animit{
+            background-color: blue;
+        }
+        #animtop-mid{
+            background-color: red;
+            grid-area: mid;
+            animation: gridAnim 1s ease 0s infinite;
+        }
+        #animit1{background-color: cyan;}
+        #animit2{background-color: green;}
+        #animit3{background-color: blue;}
+        #animit4{background-color: yellow;}
+        #animit5{background-color: orange;}
+        
+        @keyframes gridAnim {
+            0%{
+                grid-column: 2 / 3;
+                grid-row: 1 / 2;
+            }
+            25%{
+                grid-column: 2/3;
+                grid-row: 2 / 3;
+            }
+            50%{
+                grid-column: 3/4;
+                grid-row: 2/3;
+            }
+            75%{
+                grid-column: 3/4;
+                grid-row: 1/2;
+            }
+        }
+    </style>
+    <h1> Tesanim</h1>
+    <div class="animCont" style="width:20vw; height:20vh;">
+        <div id="animit1" class="animit"></div>
+        <div id="animit2" class="animit"></div>
+        <div id="animit3" class="animit"></div>
+        <div id="animit4" class="animit"></div>
+        <div id="animit5" class="animit"></div>
+        <div id="animtop-mid" class="animit"></div>
     </div>
 </body>
 </html>

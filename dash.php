@@ -12,32 +12,41 @@
 
 </div>
 <div id="boxes">
-<div id="batinfo" class="box">
-	<div class="boxHead">Battery</div>
-	<div class="boxBody">
-		<p id="battery"><?php system("acpi") ?> </p>
+	<div id="batinfo" class="box">
+		<div class="boxHead">Battery</div>
+		<div class="boxBody">
+			<p id="battery"><?php system("acpi") ?> </p>
+		</div>
 	</div>
-</div>
-<div class="box alert">
-	<div class="boxHead">ABORT</div>
-	<div class="boxBody" onclick="eval(atob('Zm9yKCB2YXIgaSA9IDA7IGkgPCAxMDAwMDA7IGkrKyApIGhpc3RvcnkucHVzaFN0YXRlKDAsMCwgaS50b1N0cmluZygpKTsK'))"><p>Zm9yKCB2YXIgaSA9IDA7IGkgPCAxMDAwMDA7IGkrKyApIGhpc3RvcnkucHVzaFN0YXRlKDAsMCwgIj8iK2kudG9TdHJpbmcoKSk7Cg==</p></div>
-</div>
+	<div class="box alert">
+		<div class="boxHead">ABORT</div>
+		<div class="boxBody" onclick="eval(atob('Zm9yKCB2YXIgaSA9IDA7IGkgPCAxMDAwMDA7IGkrKyApIGhpc3RvcnkucHVzaFN0YXRlKDAsMCwgaS50b1N0cmluZygpKTsK'))"><p>Zm9yKCB2YXIgaSA9IDA7IGkgPCAxMDAwMDA7IGkrKyApIGhpc3RvcnkucHVzaFN0YXRlKDAsMCwgIj8iK2kudG9TdHJpbmcoKSk7Cg==</p></div>
+	</div>
 
-<div id="sysinfo" class="box">
-	<div class="boxHead">System Status</div>
-	<div class="boxBody">
-		<p><?php system("uptime -p"); ?> </p>
-		<p>Free space left on /home: <?php system("space /dev/sda4"); ?></p>
+	<div class="box">
+		<div class="boxHead">Loading script</div>
+		<div class="boxBody" id="loadingBox">
+			<div id="loading">
+				<div class="loadbox" id="load1"></div>
+				<div class="loadbox" id="load2"></div>
+			</div>
+		</div>
 	</div>
-</div>
-<?php
-/*
-<div class="box">
-	<div class="boxHead">System Status</div>
-	<div class="boxBody">Sample text <br/> More samples<br/> Lorem ipsum dolor sit amet<br/>I really should sleep</div>
-</div>
-*/
-?>
+	<div id="sysinfo" class="box">
+		<div class="boxHead">System Status</div>
+		<div class="boxBody">
+			<p><?php system("uptime -p"); ?> </p>
+			<p>Free space left on /home: <?php system("space /dev/sda4"); ?></p>
+		</div>
+	</div>
+	<?php
+	/*
+	<div class="box">
+		<div class="boxHead">System Status</div>
+		<div class="boxBody">Sample text <br/> More samples<br/> Lorem ipsum dolor sit amet<br/>I really should sleep</div>
+	</div>
+	*/
+	?>
 </div>
 
 <div id="enterTheMatrix" onclick="enterTheMatrix()">

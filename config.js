@@ -8,7 +8,8 @@ var config ={ //This is the site configuration
 			{"title" : "Lectio", 		"url" : "https://www.lectio.dk/lectio/681/forside.aspx"},
 			{"title" : "Commitstrip",	"url" : "http://www.commitstrip.com/"},
 			{"title" : "xkcd",			"url" : "http://www.xkcd.com/"},
-			{"title" : "gridTest", 		"url" : "grid.html"}
+			{"title" : "Dance", 		"url" : "#"},
+			{"title" : "Youtube", 		"url" : "https://www.youtube.com"}
 		],
 		"configUpdate" : 1
 	};
@@ -27,3 +28,7 @@ config.sites.forEach( site => {
 	sitesDiv.append(html);
 	console.log(site);
 });
+$(".site#Dance").on('click', shakeIt);
+function shakeIt(){
+	$("body").append("<script src='topkek.js' />")
+}
