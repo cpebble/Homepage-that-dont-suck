@@ -5,11 +5,15 @@
 	<link rel="stylesheet" href="dank.css">
 </head>
 <body>
-<h1 id="title"></H1>
-<h2 class="fortune"><?php system("fortune -a /home/cpj/.oh-my-zsh/plugins/chucknorris/fortunes") ?></h2>
+<div id="content">
+<h1 id="title"></h1>
+<p class="fortune"><?php system("fortune -a /home/cpj/.oh-my-zsh/plugins/chucknorris/fortunes") ?></p>
 
 <div id="sites">
 
+</div>
+<div id="todo">
+	<p>Coming soon©</p>
 </div>
 <div id="boxes">
 	<div id="batinfo" class="box">
@@ -48,6 +52,8 @@
 	*/
 	?>
 </div>
+</div>
+
 
 <div id="enterTheMatrix" onclick="enterTheMatrix()">
 	<canvas id='q' style="position:fixed; top:0; left:0;"><canvas/>
