@@ -1,5 +1,5 @@
 body{
-    background-image: url("back.png");
+    background-image: url("assets/back.png");
     background-repeat: repeat;
     overflow-x: hidden;
     margin: 0;
@@ -15,11 +15,11 @@ body{
 
 #content{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: minmax(600px, 1fr) repeat(3, 1fr);
     grid-template-rows: 1fr 3fr 2fr;
     grid-template-areas: "title title fortune fortune"
-                         "sites sites sites todo"
-                         "boxes boxes boxes boxes";
+                         "feed sites sites sites "
+                         "feed boxes boxes boxes ";
     grid-gap: 4em;
     height: 100vh;
 
@@ -31,7 +31,7 @@ body{
         grid-template-areas:"title"
                             "fortune"
                             "sites"
-                            "todo"
+                            "feed"
                             "boxes";
         height: auto;
     }
@@ -132,9 +132,39 @@ body{
     color: #FFFFFF;
 }
 
-#todo{
-    grid-area: todo;
+#feeds{
+    grid-area: feed;
     background-color: rgba(0, 100, 255, 0.5);
+}
+#feeds h2{
+    margin-left: 1em;
+    font-family: sans-serif;
+    display: inline-block;
+}
+#feeds ul{
+    overflow-y: scroll;
+    height: 88%;
+    padding: 0;
+}
+#feeds ul li{
+    list-style: none;
+    border-bottom: 1px solid rgba(200,200,200,0.8);
+    padding: 5px 0 10px 2em;
+}
+#feeds li .title{
+    display: block;
+}
+#feeds .customFeed{
+    display: inline-block;
+    width: 0;
+    overflow-x: hidden;
+    transition: width 0.8s linear;
+}
+#feeds .customFeed.expanded{
+    width: 250px;
+}
+#feeds .customFeed input{
+    width: 90%;
 }
 
 .fortune{
@@ -258,7 +288,27 @@ body{
     text-align: center;
 }
 
-#loadingBox{height: 6em; display: flex; justify-content: center; align-items: center; padding: 0;}
+#colorBox{
+
+}
+#colorBox #colorContainer{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    padding-left: 0;
+    padding-right: 0;
+}
+#colorBox #colorContainer .colorDiv{
+    height: 2em;
+    width: 2em;
+    background: #FFFFFF;
+    border-radius: 50%;
+    opacity: 0.5;
+    transition: opacity 0.5s;
+}
+#colorBox #colorContainer .colorDiv:hover{
+    opacity: 1;
+}
 
 #loading {
     /*height: 4.5em;

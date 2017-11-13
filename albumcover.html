@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Album cover</title>
+    </head>
+    <body>
+        <style media="screen">
+            #album{
+                height: 300px;
+                width: 300px;
+            }
+            #album img{
+                max-width: 100%;
+                float: left;
+                clip-path: circle(50% at 50% 50%);
+                animation: rotate 10s linear infinite;
+            }
+            #album::after{
+                height: 100%;
+                width: 100%;
+                z-index: 10;
+                background: radial-gradient(circle at center, rgba(255,255,255,1) 10%, rgba(255,255,255,0) 10%);
+                content: " ";
+                display: block;
+                position: relative;
+                top: 0px;
+                left: 0px;
+            }
+            @keyframes rotate {
+                from{
+                    transform: rotate(0deg);
+                }
+                to{
+                    transform: rotate(360deg);
+                }
+            }
+        </style>
+        <div id="album">
+            <img src="assets/album.jpg" id="art" class="musicInfo "alt="">
+        </div>
+    </body>
+</html>

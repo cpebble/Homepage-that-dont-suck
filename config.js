@@ -1,4 +1,4 @@
-/*jshint esversion: 6 */
+/* jshint esversion: 6 */
 // var config ={ //This is the site configuration
 // 		"name" : "Christian Påbøl",
 // 		"title": "Awesome homepage belonging to %name",
@@ -9,7 +9,7 @@
 // 			{"title" : "Lectio", 		"url" : "https://www.lectio.dk/lectio/681/forside.aspx"},
 // 			{"title" : "Commitstrip",	"url" : "http://www.commitstrip.com/"},
 // 			{"title" : "xkcd",			"url" : "http://www.xkcd.com/"},
-// 			{"title" : "Dance", 		"url" : "#"},
+//   			{"title" : "Dance", 		"url" : "#"},
 // 			{"title" : "Youtube", 		"url" : "https://www.youtube.com"}
 // 		],
 // 		"configUpdate" : 1
@@ -38,9 +38,18 @@ const config = {
 		]},
 		{"title" : "Cancer", 			'sites' : [
 			{"title" : "Dance", "url" : "#"},
-			{"title" : "CSS-shapes", "url" : "shapes.html"}
+			{"title" : "CSS-shapes", "url" : "shapes.html"},
+			{"title" : "AlbumCover", "url" : "albumcover.html"}
 		]}
 	],
+	"backgrounds" : [
+		{'name' : "Blue", 'color' : '#0088FF', 'fileName' : "blue" },
+		{'name' : "BlueGreen", 'color' : '#50CCCC', 'fileName' : 'bluegreen' },
+		{'name' : "Orange", 'color' : '#FFAA00', 'fileName' : 'orange' },
+		{'name' : "Purple", 'color' : '#9000FF', 'fileName' : 'purple' },
+		{'name' : "Red", 'color' : '#FF0000', 'fileName' : 'red' }
+	],
+	"feedReddit":"webdev",
 	"configUpdate" : 1
 };
 
@@ -50,6 +59,8 @@ heading = heading.replace(/%name/g , "<span class='name'>"+config.name+"</span>"
 console.log(heading);
 document.getElementById("title").innerHTML = heading;
 
+// We load the reddit feed asynchrously so do that Now
+loadFeed(config.feedReddit);
 
 var sitesDiv = $("#sites");
 var linkString = "<div class='siteDiv' id='%title'><a href='%href' id='%title' class='site'>%title</a><ul class='siteList' id='%title'></ul></div>";
@@ -83,4 +94,18 @@ function expand(id){
 }
 function retract(){
 	$('.siteList#'+id).removeClass('expanded');
+}
+
+config.backgrounds.forEach((el)=>{
+	let output = `<div data-name='${el.name}' data-fileName='${el.fileName}' class='colorDiv' style='background-color: ${el.color}' onclick='changeBackground(this)'></div>`
+	$('#colorContainer').append(output);
+});
+
+window.changeBackground = function(element){
+	let fileName = $(element).data('filename');	jQuery.post('background.php', {file : fileName}, function(req, status){
+		alert(`Tried to change background with status ${status} for file ${fileName}`);
+		location.reload();
+
+	});
+
 }

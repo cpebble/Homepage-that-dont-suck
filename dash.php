@@ -12,8 +12,14 @@
 <div id="sites">
 
 </div>
-<div id="todo">
-	<p>Coming soon©</p>
+<div id="feeds">
+	<h2>Feed</h2><i id="customFeed">✏</i><div class="customFeed"><input type="text" name="" value=""></input></div>
+	<ul class="feed">
+	</ul>
+	<div id="loading" style="margin: 3em;">
+		<div class="loadbox" id="load1"></div>
+		<div class="loadbox" id="load2"></div>
+	</div>
 </div>
 <div id="boxes">
 	<div id="batinfo" class="box">
@@ -27,13 +33,10 @@
 		<div class="boxBody" onclick="eval(atob('Zm9yKCB2YXIgaSA9IDA7IGkgPCAxMDAwMDA7IGkrKyApIGhpc3RvcnkucHVzaFN0YXRlKDAsMCwgaS50b1N0cmluZygpKTsK'))"><p>Zm9yKCB2YXIgaSA9IDA7IGkgPCAxMDAwMDA7IGkrKyApIGhpc3RvcnkucHVzaFN0YXRlKDAsMCwgIj8iK2kudG9TdHJpbmcoKSk7Cg==</p></div>
 	</div>
 
-	<div class="box">
-		<div class="boxHead">Loading script</div>
-		<div class="boxBody" id="loadingBox">
-			<div id="loading">
-				<div class="loadbox" id="load1"></div>
-				<div class="loadbox" id="load2"></div>
-			</div>
+	<div class="box" id="colorBox">
+		<div class="boxHead">Change background</div>
+		<div class="boxBody" id="colorContainer">
+
 		</div>
 	</div>
 	<div id="sysinfo" class="box">
@@ -70,7 +73,10 @@
 <footer>The crying children, looking at the burning orphanage, felt a decreasing sense of belonging.</footer>
 
 <script src="jquery.js"></script>
+<script src="feed.js"></script>
 <script src="config.js"></script>
 <script src="format.js"></script>
+
+</script>
 </body>
 </html>
