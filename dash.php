@@ -70,12 +70,17 @@
 	</script>
 
 </div>
+<img id="backgroundImage" style="display: none;" src="assets/back.png"/>
 <footer>The crying children, looking at the burning orphanage, felt a decreasing sense of belonging.</footer>
 
+
 <script src="jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.0.1/color-thief.min.js"></script>
 <script src="feed.js"></script>
 <script src="config.js"></script>
 <script src="format.js"></script>
+
+</script>
 
 </script>
 </body>

@@ -26,8 +26,8 @@ const config = {
 		{"title" : "Produktivitet", 	'sites' : [
 			{"title" : "Google Docs", "url" : "http://drive.google.com/"},
 			{"title" : "Overleaf", "url" : "http://overleaf.com/"},
-			{"title" : "Lectio", "url" : "http://www.lectio.dk"},
-			{"title" : "Stack overflow", "url" : "http://stackoverflow.com/"}
+			{"title" : "Stack overflow", "url" : "http://stackoverflow.com/"},
+			{"title" : "Flex-box tricks", "url" : "https://css-tricks.com/snippets/css/a-guide-to-flexbox/"}
 		]},
 		{"title" : "Prokrastination",	'sites': [
 			{"title" : "Reddit", "url" : "http://www.reddit.com/"},
@@ -103,9 +103,31 @@ config.backgrounds.forEach((el)=>{
 
 window.changeBackground = function(element){
 	let fileName = $(element).data('filename');	jQuery.post('background.php', {file : fileName}, function(req, status){
-		alert(`Tried to change background with status ${status} for file ${fileName}`);
 		location.reload();
 
 	});
 
 }
+
+function clamp(x,min,max){
+
+}
+
+// Coloring the boxes
+var colorThief = new ColorThief();
+let img = $("#backgroundImage")[0]
+let colors = colorThief.getColor(img)
+colors = colors.map(x=>x+35);
+let shiftedColors = [0,0,0]
+for(var i = 1; i <=3 ; i++)
+	shiftedColors[i -1] = colors[i % 3]
+
+shiftedColors = shiftedColors.map(x=>255-x)
+
+console.log(colors)
+console.log(shiftedColors)
+$('.site').each((i,el)=>{
+	let color = shiftedColors.join(',')
+	$(el).css({'background-color': `rgb(${color})`});
+	// $(el).css("background-image", );
+})
